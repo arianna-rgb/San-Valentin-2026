@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>💘 Pregunta importante 💘</title>
+  <style>
+    body {
+      background: linear-gradient(135deg, #ff758c, #ffb199);
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 120px;
+      color: white;
+      overflow: hidden;
+    }
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 40px;
+    }
+    button {
+      padding: 15px 25px;
+      font-size: 18px;
+      margin: 10px;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    .si {
+      background-color: #ff4d6d;
+      color: white;
+    }
+    .meh, .lechuga {
+      background-color: #6c757d;
+      color: white;
+      position: absolute;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>¿Quieres ser mi San Valentín? 💖</h1>
+
+  <button class="si" onclick="respuestaSi()">SI OBVIO 💘</button>
+  <button class="meh" onmouseover="mover(this)">NO MEH 😒</button>
+  <button class="lechuga" onmouseover="mover(this)">LECHUGA 🥬</button>
+
+  <script>
+    function respuestaSi() {
+      document.body.innerHTML = `
+        <h1>Sabía que dirías que sí 😍</h1>
+        <h2>Prepárate para tu cita conmigo 💕</h2>
+      `;
+    }
+
+    function mover(boton) {
+      const x = Math.random() * (window.innerWidth - 120);
+      const y = Math.random() * (window.innerHeight - 80);
+      boton.style.left = x + 'px';
+      boton.style.top = y + 'px';
+    }
+  </script>
+
+</body>
+</html>
