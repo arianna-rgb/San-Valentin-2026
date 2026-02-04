@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html>
 <head>
   <meta charset="UTF-8">
   <title>💘 Tengo una pregunta importante para ti 💘</title>
@@ -66,3 +68,60 @@
     }
   </style>
 </head>
+
+<body>
+
+  <h1>¿Quieres ser mi San Valentín?💖</h1>
+
+  <button onclick="respuestaSi()">SI OBVIO💘</button>
+  <button class="meh" onmouseover="mover(this)">NO MEH😒</button>
+  <button class="lechuga" onmouseover="mover(this)">LECHUGA🥬</button>
+
+  <script>
+    function respuestaSi() {
+      document.body.innerHTML = `
+        <h1>Ay amor ¡te amooo! me encanta que entre tantas opciones me hayas dado el SIIIII 😍</h1>
+        <h2>Prepárate para un 14 de febrero re lindo mor 💕</h2>
+        <h3>Descubre las pistas para tu regalo secreto 🎁✨</h3>
+        <div class="pistas" id="pistas"></div>
+      `;
+      mostrarPistas();
+    }
+
+    function mover(boton) {
+      const x = Math.random() * (window.innerWidth - 120);
+      const y = Math.random() * (window.innerHeight - 80);
+      boton.style.left = x + 'px';
+      boton.style.top = y + 'px';
+    }
+
+    function mostrarPistas() {
+      const hoy = new Date();
+      const year = hoy.getFullYear();
+
+      const pistas = [
+        { fecha: new Date(year, 1, 9), texto: "09 Febrero: Aire 🌬️" },
+        { fecha: new Date(year, 1, 10), texto: "10 Febrero: Placer 😏" },
+        { fecha: new Date(year, 1, 11), texto: "11 Febrero: Movimiento 💃" },
+        { fecha: new Date(year, 1, 12), texto: "12 Febrero: Blanco 🤍" },
+        { fecha: new Date(year, 1, 13), texto: "13 Febrero: Música 🎶" }
+      ];
+
+      let html = "";
+
+      pistas.forEach(p => {
+        if (hoy >= p.fecha) {
+          html += `<div>✨ ${p.texto}</div>`;
+        }
+      });
+
+      if (html === "") {
+        html = "Las pistas aparecerán pronto... 👀";
+      }
+
+      document.getElementById("pistas").innerHTML = html;
+    }
+  </script>
+
+</body>
+</html>
