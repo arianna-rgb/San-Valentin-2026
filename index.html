@@ -82,19 +82,28 @@
     }
 
     function mostrarPistas() {
+      const hoy = new Date();
+      const year = hoy.getFullYear();
+
       const pistas = [
-        "09 Febrero: Aire 🌬️",
-        "10 Febrero: Placer 😏",
-        "11 Febrero: Movimiento 💃",
-        "12 Febrero: Blanco 🤍",
-        "13 Febrero: Música 🎶"
+        { fecha: new Date(year, 1, 9), texto: "09 Febrero: Aire 🌬️" },
+        { fecha: new Date(year, 1, 10), texto: "10 Febrero: Placer 😏" },
+        { fecha: new Date(year, 1, 11), texto: "11 Febrero: Movimiento 💃" },
+        { fecha: new Date(year, 1, 12), texto: "12 Febrero: Blanco 🤍" },
+        { fecha: new Date(year, 1, 13), texto: "13 Febrero: Música 🎶" }
       ];
 
       let html = "";
 
       pistas.forEach(p => {
-        html += `<div>✨ ${p}</div>`;
+        if (hoy >= p.fecha) {
+          html += `<div>✨ ${p.texto}</div>`;
+        }
       });
+
+      if (html === "") {
+        html = "Las pistas aparecerán pronto... 👀";
+      }
 
       document.getElementById("pistas").innerHTML = html;
     }
