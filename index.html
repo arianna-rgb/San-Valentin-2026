@@ -5,7 +5,7 @@
   <title>💘 Tengo una pregunta importante para ti 💘</title>
   <style>
     body {
-      background: linear-gradient(135deg, #FF0066);
+      background: linear-gradient(135deg, #FF0066, #FF8837);
       font-family: Arial, sans-serif;
       text-align: center;
       margin-top: 120px;
@@ -24,14 +24,13 @@
       border-radius: 12px;
       cursor: pointer;
       transition: 0.2s;
-    }
-    .si {
-      background-color: #ff4d6d;
+      background-color: #FF8837;
       color: white;
+    }
+    button:hover {
+      transform: scale(1.05);
     }
     .meh, .lechuga {
-      background-color: #6c757d;
-      color: white;
       position: absolute;
     }
     .pistas {
@@ -46,7 +45,7 @@
 
   <h1>¿Quieres ser mi San Valentín?💖</h1>
 
-  <button class="si" onclick="respuestaSi()">SI OBVIO💘</button>
+  <button onclick="respuestaSi()">SI OBVIO💘</button>
   <button class="meh" onmouseover="mover(this)">NO MEH😒</button>
   <button class="lechuga" onmouseover="mover(this)">LECHUGA🥬</button>
 
