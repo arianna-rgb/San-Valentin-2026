@@ -1,8 +1,10 @@
-<!DOCTYPE html>
-<html>
 <head>
   <meta charset="UTF-8">
   <title>💘 Tengo una pregunta importante para ti 💘</title>
+
+  <!-- Fuente romántica -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
   <style>
     html, body {
       margin: 0;
@@ -15,16 +17,25 @@
       background-attachment: fixed;
       background-repeat: no-repeat;
       background-size: cover;
-      font-family: Arial, sans-serif;
+      font-family: 'Playfair Display', serif;
       text-align: center;
       color: white;
       overflow: hidden;
     }
 
     h1 {
-      font-size: 2.5em;
+      font-size: 4.5em;
       margin-top: 120px;
       margin-bottom: 40px;
+      text-shadow: 0 6px 18px rgba(0,0,0,0.3);
+    }
+
+    h2 {
+      font-size: 2em;
+    }
+
+    h3 {
+      font-size: 1.6em;
     }
 
     button {
@@ -37,6 +48,7 @@
       transition: 0.2s;
       background-color: #FF8837;
       color: white;
+      font-family: 'Playfair Display', serif;
     }
 
     button:hover {
@@ -49,65 +61,8 @@
 
     .pistas {
       margin-top: 30px;
-      font-size: 20px;
+      font-size: 22px;
       line-height: 1.8;
     }
   </style>
 </head>
-
-<body>
-
-  <h1>¿Quieres ser mi San Valentín?💖</h1>
-
-  <button onclick="respuestaSi()">SI OBVIO💘</button>
-  <button class="meh" onmouseover="mover(this)">NO MEH😒</button>
-  <button class="lechuga" onmouseover="mover(this)">LECHUGA🥬</button>
-
-  <script>
-    function respuestaSi() {
-      document.body.innerHTML = `
-        <h1>Ni modo, me vendiste tu alma 😍</h1>
-        <h2>Prepárate para un 14 de febrero re lindo mor 💕</h2>
-        <h3>Descubre las pistas para tu regalo secreto 🎁✨</h3>
-        <div class="pistas" id="pistas"></div>
-      `;
-      mostrarPistas();
-    }
-
-    function mover(boton) {
-      const x = Math.random() * (window.innerWidth - 120);
-      const y = Math.random() * (window.innerHeight - 80);
-      boton.style.left = x + 'px';
-      boton.style.top = y + 'px';
-    }
-
-    function mostrarPistas() {
-      const hoy = new Date();
-      const year = hoy.getFullYear();
-
-      const pistas = [
-        { fecha: new Date(year, 1, 9), texto: "09 Febrero: Aire 🌬️" },
-        { fecha: new Date(year, 1, 10), texto: "10 Febrero: Placer 😏" },
-        { fecha: new Date(year, 1, 11), texto: "11 Febrero: Movimiento 💃" },
-        { fecha: new Date(year, 1, 12), texto: "12 Febrero: Blanco 🤍" },
-        { fecha: new Date(year, 1, 13), texto: "13 Febrero: Música 🎶" }
-      ];
-
-      let html = "";
-
-      pistas.forEach(p => {
-        if (hoy >= p.fecha) {
-          html += `<div>✨ ${p.texto}</div>`;
-        }
-      });
-
-      if (html === "") {
-        html = "Las pistas aparecerán pronto... 👀";
-      }
-
-      document.getElementById("pistas").innerHTML = html;
-    }
-  </script>
-
-</body>
-</html>
